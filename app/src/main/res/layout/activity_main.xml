@@ -4,32 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
     tools:context="com.shivam.test.MainActivity">
 
     <TextView
         android:id="@+id/textview"
         android:layout_width="142dp"
-        android:layout_height="72dp"
+        android:layout_height="69dp"
         android:text="0"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/but"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/but"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="166dp"
+        android:layout_height="98dp"
         android:layout_marginBottom="100dp"
+        android:background="@drawable/addbutton"
         android:onClick="addcount"
         android:text="@string/Button_add"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview" />
+
+    <TextSwitcher
+        android:id="@+id/Tex"
+        android:layout_width="368dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toTopOf="@+id/textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="79dp"
+        android:layout_height="36dp"
+        android:background="@drawable/reset"
+        android:onClick="resets"
+        android:text="Reset"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but"
+        app:layout_constraintVertical_bias="0.583" />
 
 </android.support.constraint.ConstraintLayout>
