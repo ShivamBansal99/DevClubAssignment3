@@ -12,18 +12,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(savedInstanceState!=null){
+            count=savedInstanceState.getInt(cout);
+            TextView prev= findViewById(R.id.textview);
+            String s=String.valueOf(count);
+            prev.setText(s);
+        }else{
+            count=0;
+            TextView prev= findViewById(R.id.textview);
+            String s=String.valueOf(count);
+            prev.setText(s);
+        }
     }
-    int count=0;
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(cout,count);
+    }
+    String cout="counting";
+    int count;
     public void addcount(View view){
         setContentView(R.layout.activity_main);
-        TextView prev= (TextView) findViewById(R.id.textview);
+        TextView prev= findViewById(R.id.textview);
         count=count+1;
         String s=String.valueOf(count);
         prev.setText(s);
     }
     public void resets(View view){
         setContentView(R.layout.activity_main);
-        TextView prev= (TextView) findViewById(R.id.textview);
+        TextView prev= findViewById(R.id.textview);
         count=0;
         String s=String.valueOf(count);
         prev.setText(s);
